@@ -16,6 +16,8 @@
 		0129EDE822197264006686D2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0129EDE722197264006686D2 /* README.md */; };
 		0129EDF022197BD9006686D2 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EDEF22197BD9006686D2 /* PostsTableViewController.swift */; };
 		0129EDF222197C57006686D2 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EDF122197C57006686D2 /* PostTableViewCell.swift */; };
+		0129EDF422197D9D006686D2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EDF322197D9D006686D2 /* Post.swift */; };
+		0129EDF622197DA7006686D2 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EDF522197DA7006686D2 /* Album.swift */; };
 		0129EDF922197DD7006686D2 /* Posts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0129EDF722197DD7006686D2 /* Posts.storyboard */; };
 		0129EDFB221980F9006686D2 /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EDFA221980F9006686D2 /* AlbumTableViewCell.swift */; };
 		0129EDFD2219810B006686D2 /* AlbumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EDFC2219810B006686D2 /* AlbumsTableViewController.swift */; };
@@ -55,6 +57,8 @@
 		0129EDE722197264006686D2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0129EDEF22197BD9006686D2 /* PostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
 		0129EDF122197C57006686D2 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		0129EDF322197D9D006686D2 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		0129EDF522197DA7006686D2 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		0129EDF822197DD7006686D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PA/Storyboards/Base.lproj/Posts.storyboard; sourceTree = "<group>"; };
 		0129EDFA221980F9006686D2 /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		0129EDFC2219810B006686D2 /* AlbumsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +166,8 @@
 		0129EDEB221972E6006686D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0129EDF322197D9D006686D2 /* Post.swift */,
+				0129EDF522197DA7006686D2 /* Album.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -328,6 +334,8 @@
 				0129EDBA22196F41006686D2 /* AppDelegate.swift in Sources */,
 				0129EDF022197BD9006686D2 /* PostsTableViewController.swift in Sources */,
 				0129EDF222197C57006686D2 /* PostTableViewCell.swift in Sources */,
+				0129EDF422197D9D006686D2 /* Post.swift in Sources */,
+				0129EDF622197DA7006686D2 /* Album.swift in Sources */,
 				0129EDFB221980F9006686D2 /* AlbumTableViewCell.swift in Sources */,
 				0129EDFD2219810B006686D2 /* AlbumsTableViewController.swift in Sources */,
 			);
