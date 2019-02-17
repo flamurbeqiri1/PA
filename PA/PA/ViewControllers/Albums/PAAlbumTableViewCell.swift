@@ -10,6 +10,8 @@ import UIKit
 
 class PAAlbumTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var albumTitleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

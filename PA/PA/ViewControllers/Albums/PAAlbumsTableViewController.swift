@@ -8,12 +8,30 @@
 
 import UIKit
 
-class PAAlbumsTableViewController: UITableViewController {
+class PAAlbumsTableViewController: UITableViewController, HasDependencies {
 
+    // Services
+    private lazy var albumService: AlbumService = dependencies.albumService()
+    // Properties
+    var albums: [Album] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
     }
 
+    func setupUI() {
+        self.albumService.listAllAlbums { (result) in
+            switch result {
+            case .failure(let error):
+                print("Error: \(error)")
+            case .success(let albums):
+                self.albums = albums
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -35,13 +53,16 @@ extension PAAlbumsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.albums.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AlbumTableViewCell", for: indexPath)
-        // Configure the cell...
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AlbumTableViewCell", for: indexPath) as? PAAlbumTableViewCell else {
+            return UITableViewCell()
+        }
+        let albumData = self.albums[indexPath.row]
+        cell.albumTitleLabel.text = albumData.title
         return cell
     }
 }
