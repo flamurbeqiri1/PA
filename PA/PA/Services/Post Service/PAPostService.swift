@@ -12,7 +12,7 @@ class PAPostService: PostService {
     
     private let backendService: BackendService
     
-    let postsUrl = "\(baseUrl)posts/"
+    let allPostsUrl = "\(baseUrl)posts/"
     
     init(backendService: BackendService) {
         #if DEBUG
@@ -28,7 +28,7 @@ class PAPostService: PostService {
     }
     
     func listAllPosts(completion: @escaping (Result<[Post]>) -> Void) {
-        self.backendService.get([Post].self, path: postsUrl) { (result) in
+        self.backendService.get([Post].self, path: allPostsUrl) { (result) in
             switch result {
             case .success(let posts):
                 completion(Result.success(posts))
@@ -38,4 +38,24 @@ class PAPostService: PostService {
         }
     }
     
+    func getPost(postId: Int, completion: @escaping (Result<Post>) -> Void) {
+        self.backendService.get(Post.self, path: getPostCommentUrl(from: postId)) { (result) in
+            switch result {
+            case .success(let post):
+                completion(Result.success(post))
+            case .failure(let error):
+                completion(Result.failure(error))
+            }
+        }
+    }
+    
+}
+
+// MARK: - Helpers
+
+extension PAPostService {
+    
+    func getPostCommentUrl(from postID: Int) -> String {
+        return "\(baseUrl)/comments/\(postID)"
+    }
 }

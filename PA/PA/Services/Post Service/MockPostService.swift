@@ -28,6 +28,14 @@ class MockPostService: PostService {
             completion(Result.success(self.posts))
         }
     }
+    
+    func getPost(postId: Int, completion: @escaping (Result<Post>) -> Void) {
+        // Simulate network latency
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            print("MockPostService.getPost")
+            completion(Result.success(self.posts.first!))
+        }
+    }
 }
 
 extension MockPostService {
