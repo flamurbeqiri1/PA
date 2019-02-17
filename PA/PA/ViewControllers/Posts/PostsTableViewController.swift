@@ -8,13 +8,31 @@
 
 import UIKit
 
-class PostsTableViewController: UITableViewController {
-
+class PostsTableViewController: UITableViewController, HasDependencies {
+    
+    // Services
+    private lazy var postService: PostService = dependencies.postService()
+    // Properties
+    var posts: [Post] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+    
+    func setupUI() {
+        self.postService.listAllPosts { (result) in
+            switch result {
+            case .success(let posts):
+                print(posts)
+                self.posts = posts
+                self.tableView.reloadData()
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -22,7 +40,6 @@ class PostsTableViewController: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
 
@@ -35,13 +52,17 @@ extension PostsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.posts.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath)
-        // Configure the cell...
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath) as? PostTableViewCell else {
+            return UITableViewCell()
+        }
+        let data = self.posts[indexPath.row]
+        cell.postTitleLabel.text = data.title
+        cell.postBodyLabel.text = data.body
         return cell
     }
 }
