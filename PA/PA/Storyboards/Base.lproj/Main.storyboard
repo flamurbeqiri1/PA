@@ -21,42 +21,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="hFE-Of-f6a" kind="relationship" relationship="viewControllers" id="0ZF-Xk-A56"/>
-                        <segue destination="kHX-Fw-XYI" kind="relationship" relationship="viewControllers" id="YFy-wB-SbE"/>
+                        <segue destination="AuG-hj-ikk" kind="relationship" relationship="viewControllers" id="YFy-wB-SbE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2U-4C-Wcw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-192" y="-146"/>
-        </scene>
-        <!--Albums-->
-        <scene sceneID="YNn-Ok-E81">
-            <objects>
-                <tableViewController id="kHX-Fw-XYI" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="C0g-EH-8Hk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ddd-pE-c9b">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ddd-pE-c9b" id="v9s-Hx-FtS">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="kHX-Fw-XYI" id="dST-g3-tHF"/>
-                            <outlet property="delegate" destination="kHX-Fw-XYI" id="v9e-DL-YkW"/>
-                        </connections>
-                    </tableView>
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" title="Albums" image="ico_albums" selectedImage="ico_albums" id="kwb-TJ-Kg5"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="45n-Fm-LEB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1254" y="299"/>
         </scene>
         <!--Posts-->
         <scene sceneID="03N-Mb-7Fg">
@@ -66,10 +36,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjV-WB-Gby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1253.5999999999999" y="-446.62668665667172"/>
+            <point key="canvasLocation" x="586" y="-295"/>
+        </scene>
+        <!--Albums-->
+        <scene sceneID="BhI-e0-rDS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Albums" id="AuG-hj-ikk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="mIC-Xb-DYk"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xLZ-1x-GLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="833" y="179"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="ico_albums" width="24" height="24"/>
-    </resources>
 </document>
