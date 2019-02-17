@@ -52,10 +52,70 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="Albums" image="ico_albums" selectedImage="ico_albums" id="u9x-1W-gkb"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="6ST-8g-w19" kind="show" identifier="showAlbumDetails" id="VF3-jd-fFS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="68q-cY-o9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="697" y="-487"/>
+        </scene>
+        <!--Current Album Table View Controller-->
+        <scene sceneID="hMY-Mc-yaD">
+            <objects>
+                <tableViewController id="6ST-8g-w19" customClass="PACurrentAlbumTableViewController" customModule="PA" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="V4s-Mi-8ny">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PACurrentAlbumTableViewCell" rowHeight="100" id="eC6-wq-2VN" customClass="PACurrentAlbumTableViewCell" customModule="PA" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eC6-wq-2VN" id="lWE-9b-v0Q">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pFg-KS-6qo">
+                                            <rect key="frame" x="15" y="5" width="345" height="89.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="quidem molestiae enim" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glY-jR-LwK">
+                                                    <rect key="frame" x="0.0" y="34.5" width="260" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_albums" translatesAutoresizingMaskIntoConstraints="NO" id="gSu-7w-YbW">
+                                                    <rect key="frame" x="270" y="7.5" width="75" height="75"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="gSu-7w-YbW" secondAttribute="height" multiplier="1:1" id="JtS-bT-Bj8"/>
+                                                        <constraint firstAttribute="width" constant="75" id="vmd-cB-tlu"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="pFg-KS-6qo" secondAttribute="bottom" constant="5" id="HUw-bp-eJh"/>
+                                        <constraint firstItem="pFg-KS-6qo" firstAttribute="top" secondItem="lWE-9b-v0Q" secondAttribute="top" constant="5" id="Oqq-yF-bbH"/>
+                                        <constraint firstItem="pFg-KS-6qo" firstAttribute="leading" secondItem="lWE-9b-v0Q" secondAttribute="leading" constant="15" id="Wyv-z0-rIT"/>
+                                        <constraint firstAttribute="trailing" secondItem="pFg-KS-6qo" secondAttribute="trailing" constant="15" id="ZBm-vI-QH0"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="albumTitleLabel" destination="glY-jR-LwK" id="xp6-68-wPZ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6ST-8g-w19" id="uG4-7B-dKc"/>
+                            <outlet property="delegate" destination="6ST-8g-w19" id="RX0-gk-dwC"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y6Z-AV-6va" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1520.8" y="-487.10644677661173"/>
         </scene>
     </scenes>
     <resources>

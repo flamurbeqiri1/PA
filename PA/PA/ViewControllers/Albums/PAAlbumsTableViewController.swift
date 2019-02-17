@@ -65,4 +65,9 @@ extension PAAlbumsTableViewController {
         cell.albumTitleLabel.text = albumData.title
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //TEMP
+        self.performSegue(withIdentifier: "showAlbumDetails", sender: nil)
+    }
 }
