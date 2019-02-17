@@ -26,7 +26,6 @@ class PAPostsTableViewController: UITableViewController, HasDependencies {
             case .failure(let error):
                 print("Error: \(error)")
             case .success(let posts):
-                print(posts)
                 self.posts = posts
                 self.tableView.reloadData()
             }
