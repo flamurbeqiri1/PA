@@ -32,6 +32,7 @@
 		0129EE172219C55C006686D2 /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE162219C55C006686D2 /* BackendService.swift */; };
 		0129EE192219C5D4006686D2 /* MockBackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE182219C5D4006686D2 /* MockBackendService.swift */; };
 		0129EE1B2219C626006686D2 /* PABackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE1A2219C626006686D2 /* PABackendService.swift */; };
+		0129EE1D2219D15A006686D2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE1C2219D15A006686D2 /* Constants.swift */; };
 		363FE00F342FBD338D0A9BD8 /* Pods_PATests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C76585CA8514600407B59A /* Pods_PATests.framework */; };
 		673748D60B482C2A2D67EDE5 /* Pods_PAUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140E7A85C906D9E0B8591910 /* Pods_PAUITests.framework */; };
 		ACE655526FF56A8A251FB0D8 /* Pods_PA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C0F9E9DFE0715C3D5BD84E /* Pods_PA.framework */; };
@@ -86,6 +87,7 @@
 		0129EE162219C55C006686D2 /* BackendService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendService.swift; sourceTree = "<group>"; };
 		0129EE182219C5D4006686D2 /* MockBackendService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBackendService.swift; sourceTree = "<group>"; };
 		0129EE1A2219C626006686D2 /* PABackendService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PABackendService.swift; sourceTree = "<group>"; };
+		0129EE1C2219D15A006686D2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		140E7A85C906D9E0B8591910 /* Pods_PAUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PAUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C76585CA8514600407B59A /* Pods_PATests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PATests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF6372ED44799B28EF11073 /* Pods-PATests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PATests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PATests/Pods-PATests.release.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				0129EDEB221972E6006686D2 /* Model */,
 				0129EDEC221972F3006686D2 /* Services */,
 				0129EE082219B35E006686D2 /* Helper */,
+				0129EE1C2219D15A006686D2 /* Constants.swift */,
 			);
 			path = PA;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				0129EDFB221980F9006686D2 /* PAAlbumTableViewCell.swift in Sources */,
 				0129EDFD2219810B006686D2 /* PAAlbumsTableViewController.swift in Sources */,
 				0129EE0A2219B377006686D2 /* Result.swift in Sources */,
+				0129EE1D2219D15A006686D2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
