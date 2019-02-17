@@ -19,4 +19,10 @@ class AppDependency: CoreDependency {
     override func postService() -> PostService {
         return PAPostService(backendService: backendService())
     }
+    
+    // MAR: Album
+    
+    override func albumService() -> AlbumService {
+        return PAAlbumService(backendService: backendService())
+    }
 }
