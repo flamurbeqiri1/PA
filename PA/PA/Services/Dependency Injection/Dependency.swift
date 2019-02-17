@@ -12,6 +12,7 @@ import Foundation
 protocol Dependency {
     func backendService() -> BackendService
     func postService() -> PostService
+    func albumService() -> AlbumService
 }
 
 class CoreDependency: Dependency {
@@ -22,6 +23,10 @@ class CoreDependency: Dependency {
     
     func postService() -> PostService {
         return MockPostService()
+    }
+    
+    func albumService() -> AlbumService {
+        return MockAlbumService()
     }
     
 }
