@@ -9,13 +9,14 @@
 import UIKit
 
 @UIApplicationMain
-class PAAppDelegate: UIResponder, UIApplicationDelegate {
+class PAAppDelegate: UIResponder, UIApplicationDelegate, HasDependencies {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        configure(dependency: AppDependency())
         return true
     }
 
