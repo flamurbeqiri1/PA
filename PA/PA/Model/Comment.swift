@@ -1,5 +1,5 @@
 //
-//  Album.swift
+//  Comment.swift
 //  PA
 //
 //  Created by Flamur Beqiri on 17/02/2019.
@@ -8,8 +8,10 @@
 
 import Foundation
 
-struct Album: Codable {
-    let userId: Int
+struct Comment: Codable {
+    let postId: Int
     let id: Int
-    let title: String
+    let name: String
+    let email: String
+    let body: String
 }
