@@ -101,11 +101,13 @@
 			isa = PBXGroup;
 			children = (
 				0129EDB922196F41006686D2 /* AppDelegate.swift */,
-				0129EDBB22196F41006686D2 /* ViewController.swift */,
-				0129EDBD22196F41006686D2 /* Main.storyboard */,
 				0129EDC022196F42006686D2 /* Assets.xcassets */,
 				0129EDC222196F42006686D2 /* LaunchScreen.storyboard */,
 				0129EDC522196F42006686D2 /* Info.plist */,
+				0129EDE9221972D5006686D2 /* Storyboards */,
+				0129EDEA221972DE006686D2 /* ViewControllers */,
+				0129EDEB221972E6006686D2 /* Model */,
+				0129EDEC221972F3006686D2 /* Services */,
 			);
 			path = PA;
 			sourceTree = "<group>";
@@ -126,6 +128,36 @@
 				0129EDDB22196F43006686D2 /* Info.plist */,
 			);
 			path = PAUITests;
+			sourceTree = "<group>";
+		};
+		0129EDE9221972D5006686D2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0129EDBD22196F41006686D2 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		0129EDEA221972DE006686D2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0129EDBB22196F41006686D2 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0129EDEB221972E6006686D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0129EDEC221972F3006686D2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
