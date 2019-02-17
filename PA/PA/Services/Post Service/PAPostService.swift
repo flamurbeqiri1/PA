@@ -38,11 +38,11 @@ class PAPostService: PostService {
         }
     }
     
-    func getPost(postId: Int, completion: @escaping (Result<Post>) -> Void) {
-        self.backendService.get(Post.self, path: getPostCommentUrl(from: postId)) { (result) in
+    func getComment(from postId: Int, completion: @escaping (Result<Comment>) -> Void) {
+        self.backendService.get(Comment.self, path: getPostCommentUrl(from: postId)) { (result) in
             switch result {
-            case .success(let post):
-                completion(Result.success(post))
+            case .success(let comment):
+                completion(Result.success(comment))
             case .failure(let error):
                 completion(Result.failure(error))
             }
@@ -56,6 +56,6 @@ class PAPostService: PostService {
 extension PAPostService {
     
     func getPostCommentUrl(from postID: Int) -> String {
-        return "\(baseUrl)/comments/\(postID)"
+        return "\(baseUrl)comments/\(postID)"
     }
 }

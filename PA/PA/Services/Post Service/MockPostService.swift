@@ -11,10 +11,12 @@ import Foundation
 class MockPostService: PostService {
     
     var posts: [Post]!
+    var currentPostComment: Comment?
     
     init() {
         print("Start MockPostService")
         listAllPosts()
+        loadComment()
     }
     
     deinit {
@@ -29,11 +31,11 @@ class MockPostService: PostService {
         }
     }
     
-    func getPost(postId: Int, completion: @escaping (Result<Post>) -> Void) {
+    func getComment(from postId: Int, completion: @escaping (Result<Comment>) -> Void) {
         // Simulate network latency
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             print("MockPostService.getPost")
-            completion(Result.success(self.posts.first!))
+            completion(Result.success(self.currentPostComment!))
         }
     }
 }
@@ -54,5 +56,13 @@ extension MockPostService {
                  title: "ea molestias quasi exercitationem repellat qui ipsa sit aut",
                  body:"et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut")
         ]
+    }
+    
+    fileprivate func loadComment() {
+        self.currentPostComment = Comment(postId: 1,
+                                          id: 1,
+                                          name: "id labore ex et quam laborum",
+                                          email: "Eliseo@gardner.biz",
+                                          body: "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium")
     }
 }
