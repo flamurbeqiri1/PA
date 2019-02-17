@@ -36,8 +36,9 @@ class PAPostsTableViewController: UITableViewController, HasDependencies {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? PAPostDetailViewController, let senderAsPost = sender as? Post {
-            destination.currentPost = senderAsPost
+        if let destination = segue.destination as? PAPostDetailViewController, let senderAsTuple = sender as? (Post, Comment) {
+            destination.currentPost = senderAsTuple.0 // Post
+            destination.currentComment = senderAsTuple.1 // Comment
         }
     }
 
@@ -68,6 +69,14 @@ extension PAPostsTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentPost = self.posts[indexPath.row]
-        self.performSegue(withIdentifier: "showSinglePost", sender: currentPost)
+        self.postService.getComment(from: currentPost.id) { (result) in
+            switch result {
+            case .success(let comment):
+                self.performSegue(withIdentifier: "showSinglePost", sender: (currentPost, comment))
+            case .failure(let error):
+                print("Error getting current post: \(error)")
+            }
+        }
+        
     }
 }

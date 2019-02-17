@@ -65,15 +65,16 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="Posts" image="ico_posts" selectedImage="ico_posts" id="RRo-Og-tjm"/>
+                    <navigationItem key="navigationItem" id="qal-fi-1WC"/>
                     <connections>
-                        <segue destination="NFP-Mp-gcO" kind="show" identifier="showSinglePost" id="8V9-Nm-Gyc"/>
+                        <segue destination="NFP-Mp-gcO" kind="show" identifier="showSinglePost" id="iZh-kY-BFW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pT-n3-mtW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1253.5999999999999" y="-446.62668665667172"/>
+            <point key="canvasLocation" x="2313" y="-431"/>
         </scene>
-        <!--Post Detail View Controller-->
+        <!--Post Details-->
         <scene sceneID="RzT-Kv-2gN">
             <objects>
                 <viewController id="NFP-Mp-gcO" customClass="PAPostDetailViewController" customModule="PA" customModuleProvider="target" sceneMemberID="viewController">
@@ -142,6 +143,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="445-KU-Hn9"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Post Details" id="23K-xK-UBU">
+                        <barButtonItem key="leftBarButtonItem" title="Back" image="ico_Back" id="hid-E7-Rbz">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="backButtonPressed:" destination="NFP-Mp-gcO" id="O5f-sY-Czx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="commentBodyLabel" destination="xoD-Gg-0Id" id="5kU-dY-ul5"/>
                         <outlet property="commentEmailLabel" destination="xiB-MO-hVV" id="1zD-9O-6wj"/>
@@ -152,10 +161,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBr-p3-Nsf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2039" y="-447"/>
+            <point key="canvasLocation" x="3287" y="-431"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ico_Back" width="24" height="24"/>
         <image name="ico_posts" width="24" height="24"/>
     </resources>
 </document>

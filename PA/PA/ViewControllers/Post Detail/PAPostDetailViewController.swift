@@ -20,25 +20,21 @@ class PAPostDetailViewController: UIViewController, HasDependencies {
     private lazy var postService: PostService = dependencies.postService()
     
     // Properties
-    var currentPost: Post?
+    var currentPost: Post!
+    var currentComment: Comment!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let post = currentPost {
-            self.postService.getComment(from: post.id) { (result) in
-                switch result {
-                case .success(let comment):
-                    self.postTitleLabel.text = post.title
-                    self.postBodyLabel.text = post.body
-                    self.commentNameLabel.text = comment.name
-                    self.commentEmailLabel.text = comment.email
-                    self.commentBodyLabel.text = comment.body
-                case .failure(let error):
-                    print("Error getting current post: \(error)")
-                }
-            }
-        }
+        self.postTitleLabel.text = currentPost.title
+        self.postBodyLabel.text = currentPost.body
+        self.commentNameLabel.text = currentComment.name
+        self.commentEmailLabel.text = currentComment.email
+        self.commentBodyLabel.text = currentComment.body
     }
-
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
 }
