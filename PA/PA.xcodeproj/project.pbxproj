@@ -34,6 +34,7 @@
 		0129EE1B2219C626006686D2 /* PABackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE1A2219C626006686D2 /* PABackendService.swift */; };
 		0129EE1D2219D15A006686D2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE1C2219D15A006686D2 /* Constants.swift */; };
 		0129EE1F2219D593006686D2 /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE1E2219D593006686D2 /* AppDependency.swift */; };
+		0129EE222219DD37006686D2 /* PAPostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE212219DD37006686D2 /* PAPostDetailViewController.swift */; };
 		363FE00F342FBD338D0A9BD8 /* Pods_PATests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C76585CA8514600407B59A /* Pods_PATests.framework */; };
 		673748D60B482C2A2D67EDE5 /* Pods_PAUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140E7A85C906D9E0B8591910 /* Pods_PAUITests.framework */; };
 		ACE655526FF56A8A251FB0D8 /* Pods_PA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C0F9E9DFE0715C3D5BD84E /* Pods_PA.framework */; };
@@ -90,6 +91,7 @@
 		0129EE1A2219C626006686D2 /* PABackendService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PABackendService.swift; sourceTree = "<group>"; };
 		0129EE1C2219D15A006686D2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0129EE1E2219D593006686D2 /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
+		0129EE212219DD37006686D2 /* PAPostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAPostDetailViewController.swift; sourceTree = "<group>"; };
 		140E7A85C906D9E0B8591910 /* Pods_PAUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PAUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C76585CA8514600407B59A /* Pods_PATests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PATests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF6372ED44799B28EF11073 /* Pods-PATests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PATests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PATests/Pods-PATests.release.xcconfig"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 		0129EDEA221972DE006686D2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0129EE202219DD1A006686D2 /* Post Detail */,
 				0129EDED22197BAD006686D2 /* Posts */,
 				0129EDEE22197BB5006686D2 /* Albums */,
 			);
@@ -288,6 +291,14 @@
 				0129EE1A2219C626006686D2 /* PABackendService.swift */,
 			);
 			path = Backend;
+			sourceTree = "<group>";
+		};
+		0129EE202219DD1A006686D2 /* Post Detail */ = {
+			isa = PBXGroup;
+			children = (
+				0129EE212219DD37006686D2 /* PAPostDetailViewController.swift */,
+			);
+			path = "Post Detail";
 			sourceTree = "<group>";
 		};
 		454E1F444BA6DD2E90244E5B /* Pods */ = {
@@ -553,6 +564,7 @@
 				0129EE1F2219D593006686D2 /* AppDependency.swift in Sources */,
 				0129EE122219BAFE006686D2 /* PAPostService.swift in Sources */,
 				0129EE192219C5D4006686D2 /* MockBackendService.swift in Sources */,
+				0129EE222219DD37006686D2 /* PAPostDetailViewController.swift in Sources */,
 				0129EE022219AF83006686D2 /* Comment.swift in Sources */,
 				0129EDF422197D9D006686D2 /* Post.swift in Sources */,
 				0129EE072219B20B006686D2 /* Dependency.swift in Sources */,
