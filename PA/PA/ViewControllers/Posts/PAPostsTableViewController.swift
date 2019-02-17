@@ -23,12 +23,12 @@ class PAPostsTableViewController: UITableViewController, HasDependencies {
     func setupUI() {
         self.postService.listAllPosts { (result) in
             switch result {
+            case .failure(let error):
+                print("Error: \(error)")
             case .success(let posts):
                 print(posts)
                 self.posts = posts
                 self.tableView.reloadData()
-            case .failure(let error):
-                print("Error: \(error)")
             }
         }
     }
