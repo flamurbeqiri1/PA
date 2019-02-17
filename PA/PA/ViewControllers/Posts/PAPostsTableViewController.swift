@@ -61,9 +61,9 @@ extension PAPostsTableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath) as? PAPostTableViewCell else {
             return UITableViewCell()
         }
-        let data = self.posts[indexPath.row]
-        cell.postTitleLabel.text = data.title
-        cell.postBodyLabel.text = data.body
+        let postData = self.posts[indexPath.row]
+        cell.postTitleLabel.text = postData.title
+        cell.postBodyLabel.text = postData.body
         return cell
     }
     
