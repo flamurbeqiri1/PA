@@ -10,5 +10,5 @@ import Foundation
 
 protocol PostService {
     func listAllPosts(completion: @escaping (Result<[Post]>) -> Void)
-    func getComment(from postId: Int, completion: @escaping (Result<Comment>) -> Void)
+    func getComments(from postId: Int, completion: @escaping (Result<[Comment]>) -> Void)
 }

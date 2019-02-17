@@ -11,12 +11,12 @@ import Foundation
 class MockPostService: PostService {
     
     var posts: [Post]!
-    var currentPostComment: Comment?
+    var currentPostComments: [Comment]!
     
     init() {
         print("Start MockPostService")
         listAllPosts()
-        loadComment()
+        loadComments()
     }
     
     deinit {
@@ -31,11 +31,11 @@ class MockPostService: PostService {
         }
     }
     
-    func getComment(from postId: Int, completion: @escaping (Result<Comment>) -> Void) {
+    func getComments(from postId: Int, completion: @escaping (Result<[Comment]>) -> Void) {
         // Simulate network latency
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            print("MockPostService.getPost")
-            completion(Result.success(self.currentPostComment!))
+            print("MockPostService.getComments")
+            completion(Result.success(self.currentPostComments!))
         }
     }
 }
@@ -58,11 +58,28 @@ extension MockPostService {
         ]
     }
     
-    fileprivate func loadComment() {
-        self.currentPostComment = Comment(postId: 1,
+    fileprivate func loadComments() {
+        self.currentPostComments = [
+            Comment(postId: 1,
                                           id: 1,
                                           name: "id labore ex et quam laborum",
                                           email: "Eliseo@gardner.biz",
-                                          body: "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium")
+                                          body: "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"),
+            Comment(postId: 1,
+                    id: 2,
+                    name: "id labore ex et quam laborum",
+                    email: "Eliseo@gardner.biz",
+                    body: "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"),
+            Comment(postId: 1,
+                    id: 3,
+                    name: "id labore ex et quam laborum",
+                    email: "Eliseo@gardner.biz",
+                    body: "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"),
+            Comment(postId: 1,
+                    id: 4,
+                    name: "id labore ex et quam laborum",
+                    email: "Eliseo@gardner.biz",
+                    body: "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium")
+        ]
     }
 }
