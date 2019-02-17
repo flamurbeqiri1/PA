@@ -6,43 +6,37 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Albums-->
-        <scene sceneID="XXU-KG-Bsr">
-            <objects>
-                <viewController id="jiM-vi-Qob" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EYV-De-PyJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="S6Q-TH-WKb"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Albums" image="ico_albums" selectedImage="ico_albums" id="DVQ-xU-cc3"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="duT-fL-qtK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="760" y="187"/>
-        </scene>
         <!--Posts-->
-        <scene sceneID="RDp-9c-8Z6">
+        <scene sceneID="eRM-o1-yFz">
             <objects>
-                <viewController id="yKg-cL-45K" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rtG-Tg-8bH">
+                <tableViewController id="0Kx-s6-jpj" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nhO-ui-3cD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="e00-4v-zhC"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Posts" image="ico_posts" selectedImage="ico_posts" id="hVD-7m-abu">
-                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GRt-ds-Pem" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="PIN-rM-dOx">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PIN-rM-dOx" id="v6m-ba-fvg">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0Kx-s6-jpj" id="RWD-JB-MsQ"/>
+                            <outlet property="delegate" destination="0Kx-s6-jpj" id="8VC-VG-Az2"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Posts" image="ico_posts" selectedImage="ico_posts" id="RRo-Og-tjm"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6pT-n3-mtW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="760" y="-478"/>
+            <point key="canvasLocation" x="1254" y="-446"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dqu-uS-dnq">
@@ -55,13 +49,42 @@
                         <color key="selectedImageTintColor" cocoaTouchSystemColor="darkTextColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="yKg-cL-45K" kind="relationship" relationship="viewControllers" id="rSC-0C-aVz"/>
-                        <segue destination="jiM-vi-Qob" kind="relationship" relationship="viewControllers" id="255-kx-e6s"/>
+                        <segue destination="0Kx-s6-jpj" kind="relationship" relationship="viewControllers" id="0ZF-Xk-A56"/>
+                        <segue destination="kHX-Fw-XYI" kind="relationship" relationship="viewControllers" id="YFy-wB-SbE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2U-4C-Wcw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-192" y="-146"/>
+        </scene>
+        <!--Albums-->
+        <scene sceneID="YNn-Ok-E81">
+            <objects>
+                <tableViewController id="kHX-Fw-XYI" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="C0g-EH-8Hk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ddd-pE-c9b">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ddd-pE-c9b" id="v9s-Hx-FtS">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kHX-Fw-XYI" id="dST-g3-tHF"/>
+                            <outlet property="delegate" destination="kHX-Fw-XYI" id="v9e-DL-YkW"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Albums" image="ico_albums" selectedImage="ico_albums" id="kwb-TJ-Kg5"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="45n-Fm-LEB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1254" y="299"/>
         </scene>
     </scenes>
     <resources>
