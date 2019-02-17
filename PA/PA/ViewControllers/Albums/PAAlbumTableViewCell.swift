@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlbumTableViewCell: UITableViewCell {
+class PAAlbumTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

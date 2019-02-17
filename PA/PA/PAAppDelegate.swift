@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  PAAppDelegate.swift
 //  PA
 //
 //  Created by Flamur Beqiri on 17/02/2019.
@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class PAAppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 

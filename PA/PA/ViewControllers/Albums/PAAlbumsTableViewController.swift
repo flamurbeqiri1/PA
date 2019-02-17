@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlbumsTableViewController: UITableViewController {
+class PAAlbumsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class AlbumsTableViewController: UITableViewController {
 
 // MARK: - Table view data source
 
-extension AlbumsTableViewController {
+extension PAAlbumsTableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

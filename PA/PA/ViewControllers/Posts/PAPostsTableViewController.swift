@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostsTableViewController: UITableViewController, HasDependencies {
+class PAPostsTableViewController: UITableViewController, HasDependencies {
     
     // Services
     private lazy var postService: PostService = dependencies.postService()
@@ -45,7 +45,7 @@ class PostsTableViewController: UITableViewController, HasDependencies {
 
 // MARK: - Table view data source
 
-extension PostsTableViewController {
+extension PAPostsTableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -57,7 +57,7 @@ extension PostsTableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath) as? PostTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath) as? PAPostTableViewCell else {
             return UITableViewCell()
         }
         let data = self.posts[indexPath.row]

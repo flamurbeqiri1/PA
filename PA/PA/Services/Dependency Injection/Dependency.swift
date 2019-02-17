@@ -10,10 +10,15 @@ import Foundation
 
 // List all services that the app will use
 protocol Dependency {
+    func backendService() -> BackendService
     func postService() -> PostService
 }
 
 class CoreDependency: Dependency {
+    
+    func backendService() -> BackendService {
+        return MockBackendService()
+    }
     
     func postService() -> PostService {
         return MockPostService()
