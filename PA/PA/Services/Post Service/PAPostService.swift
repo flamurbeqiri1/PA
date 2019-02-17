@@ -16,14 +16,14 @@ class PAPostService: PostService {
     
     init(backendService: BackendService) {
         #if DEBUG
-        print("Start PAPostService")
+        print("DEBUG: Start PAPostService")
         #endif
         self.backendService = backendService
     }
     
     deinit {
         #if DEBUG
-        print("Stop PAPostService")
+        print("DEBUG: Stop PAPostService")
         #endif
     }
     
