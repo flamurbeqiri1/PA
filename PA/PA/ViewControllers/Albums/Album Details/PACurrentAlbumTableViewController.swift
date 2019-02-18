@@ -12,6 +12,7 @@ class PACurrentAlbumTableViewController: UITableViewController, HasDependencies 
 
     // Services
     private lazy var albumService: AlbumService = dependencies.albumService()
+    private lazy var loaderService: LoaderService = dependencies.loaderService()
     // Properties
     var currentAlbum: [Album]!
     
@@ -76,7 +77,9 @@ extension PACurrentAlbumTableViewController {
             print("Album url not fround from album: \(currentAlbum)")
             return
         }
+        self.loaderService.showLoadingIndicator()
         self.albumService.getImage(from: albumImageUrl) { (result) in
+            self.loaderService.hideLoadingIndicator()
             switch result {
             case .success(let image):
                 self.performSegue(withIdentifier: "showFullImage", sender: image)

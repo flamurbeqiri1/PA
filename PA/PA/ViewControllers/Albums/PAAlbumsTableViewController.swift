@@ -12,6 +12,7 @@ class PAAlbumsTableViewController: UITableViewController, HasDependencies {
 
     // Services
     private lazy var albumService: AlbumService = dependencies.albumService()
+    private lazy var loaderService: LoaderService = dependencies.loaderService()
     // Properties
     var albums: [Album] = []
     
@@ -21,7 +22,9 @@ class PAAlbumsTableViewController: UITableViewController, HasDependencies {
     }
 
     func setupUI() {
+        self.loaderService.showLoadingIndicator()
         self.albumService.listAllAlbums { (result) in
+            self.loaderService.hideLoadingIndicator()
             switch result {
             case .failure(let error):
                 print("Error: \(error)")
@@ -67,7 +70,9 @@ extension PAAlbumsTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentAlbum = self.albums[indexPath.row]
+        self.loaderService.showLoadingIndicator()
         self.albumService.getPhotos(from: currentAlbum.id) { (result) in
+            self.loaderService.hideLoadingIndicator()
             switch result {
             case .success(let albums):
                 self.performSegue(withIdentifier: "showAlbumDetails", sender: albums)

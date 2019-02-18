@@ -12,6 +12,7 @@ class PAPostsTableViewController: UITableViewController, HasDependencies {
     
     // Services
     private lazy var postService: PostService = dependencies.postService()
+    private lazy var loaderService: LoaderService = dependencies.loaderService()
     // Properties
     var posts: [Post] = []
     
@@ -21,7 +22,9 @@ class PAPostsTableViewController: UITableViewController, HasDependencies {
     }
     
     func setupUI() {
+        self.loaderService.showLoadingIndicator()
         self.postService.listAllPosts { (result) in
+            self.loaderService.hideLoadingIndicator()
             switch result {
             case .failure(let error):
                 print("Error: \(error)")
@@ -68,7 +71,9 @@ extension PAPostsTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentPost = self.posts[indexPath.row]
+        self.loaderService.showLoadingIndicator()
         self.postService.getComments(from: currentPost.id) { (result) in
+            self.loaderService.hideLoadingIndicator()
             switch result {
             case .success(let comments):
                 self.performSegue(withIdentifier: "showComments", sender: comments)
