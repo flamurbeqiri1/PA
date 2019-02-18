@@ -1,20 +1,24 @@
 PODS:
+  - AHKNavigationController (1.3)
   - Alamofire (4.8.1)
   - Nuke (7.5.2)
 
 DEPENDENCIES:
+  - AHKNavigationController
   - Alamofire
   - Nuke (~> 7.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - AHKNavigationController
     - Alamofire
     - Nuke
 
 SPEC CHECKSUMS:
+  AHKNavigationController: 3b8d5177e1a9c6dde5d16964b97781dea88457bf
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   Nuke: 0350d346a688426e8f2331253ef28dc2fc4f6178
 
-PODFILE CHECKSUM: 2382251d57165957b34b874ff5aef7afa2f959f8
+PODFILE CHECKSUM: cabcf398ba6eed995801f72badaaaa2818dd1e7e
 
 COCOAPODS: 1.5.0

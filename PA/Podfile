@@ -9,6 +9,7 @@ target 'PA' do
 
   pod 'Alamofire'
   pod 'Nuke', '~> 7.0'
+  pod 'AHKNavigationController'
 
   target 'PATests' do
     inherit! :search_paths
