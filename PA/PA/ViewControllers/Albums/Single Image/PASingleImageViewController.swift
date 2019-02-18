@@ -11,6 +11,7 @@ import UIKit
 class PASingleImageViewController: UIViewController {
 
     @IBOutlet private weak var singleImageView: UIImageView!
+    // Properties
     var singleImage: UIImage!
     
     override func viewDidLoad() {
