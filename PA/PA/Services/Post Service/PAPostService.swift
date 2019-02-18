@@ -55,7 +55,7 @@ class PAPostService: PostService {
 
 extension PAPostService {
     
-    func getPostCommentUrl(from postID: Int) -> String {
-        return "\(baseUrl)posts/\(postID)/comments"
+    func getPostCommentUrl(from postId: Int) -> String {
+        return "\(baseUrl)posts/\(postId)/comments"
     }
 }
