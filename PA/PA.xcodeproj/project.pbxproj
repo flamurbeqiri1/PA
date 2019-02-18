@@ -41,6 +41,9 @@
 		0129EE2D2219F8AF006686D2 /* PACommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE2C2219F8AF006686D2 /* PACommentTableViewCell.swift */; };
 		0129EE302219FEF4006686D2 /* PACurrentAlbumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE2F2219FEF4006686D2 /* PACurrentAlbumTableViewController.swift */; };
 		0129EE322219FF11006686D2 /* PACurrentAlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE312219FF11006686D2 /* PACurrentAlbumTableViewCell.swift */; };
+		0129EE35221AC35C006686D2 /* ImageLoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE34221AC35C006686D2 /* ImageLoadingService.swift */; };
+		0129EE37221AC423006686D2 /* MockImageLoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE36221AC423006686D2 /* MockImageLoadingService.swift */; };
+		0129EE3B221AC8D0006686D2 /* PANukeImageLoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE3A221AC8D0006686D2 /* PANukeImageLoadingService.swift */; };
 		363FE00F342FBD338D0A9BD8 /* Pods_PATests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C76585CA8514600407B59A /* Pods_PATests.framework */; };
 		673748D60B482C2A2D67EDE5 /* Pods_PAUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140E7A85C906D9E0B8591910 /* Pods_PAUITests.framework */; };
 		ACE655526FF56A8A251FB0D8 /* Pods_PA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C0F9E9DFE0715C3D5BD84E /* Pods_PA.framework */; };
@@ -104,6 +107,9 @@
 		0129EE2C2219F8AF006686D2 /* PACommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PACommentTableViewCell.swift; sourceTree = "<group>"; };
 		0129EE2F2219FEF4006686D2 /* PACurrentAlbumTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PACurrentAlbumTableViewController.swift; sourceTree = "<group>"; };
 		0129EE312219FF11006686D2 /* PACurrentAlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PACurrentAlbumTableViewCell.swift; sourceTree = "<group>"; };
+		0129EE34221AC35C006686D2 /* ImageLoadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingService.swift; sourceTree = "<group>"; };
+		0129EE36221AC423006686D2 /* MockImageLoadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageLoadingService.swift; sourceTree = "<group>"; };
+		0129EE3A221AC8D0006686D2 /* PANukeImageLoadingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PANukeImageLoadingService.swift; sourceTree = "<group>"; };
 		140E7A85C906D9E0B8591910 /* Pods_PAUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PAUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C76585CA8514600407B59A /* Pods_PATests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PATests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF6372ED44799B28EF11073 /* Pods-PATests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PATests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PATests/Pods-PATests.release.xcconfig"; sourceTree = "<group>"; };
@@ -238,6 +244,7 @@
 				0129EE052219B166006686D2 /* Dependency Injection */,
 				0129EE0B2219B3D9006686D2 /* Post Service */,
 				0129EE0C2219B3E1006686D2 /* Album Service */,
+				0129EE33221AC349006686D2 /* Image Service */,
 				0129EE152219C54C006686D2 /* Backend */,
 			);
 			path = Services;
@@ -246,9 +253,9 @@
 		0129EDED22197BAD006686D2 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
-				0129EE2B2219F897006686D2 /* Comment */,
 				0129EDEF22197BD9006686D2 /* PAPostsTableViewController.swift */,
 				0129EDF122197C57006686D2 /* PAPostTableViewCell.swift */,
+				0129EE2B2219F897006686D2 /* Comment */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -256,9 +263,9 @@
 		0129EDEE22197BB5006686D2 /* Albums */ = {
 			isa = PBXGroup;
 			children = (
-				0129EE2E2219FE9F006686D2 /* Album Details */,
 				0129EDFC2219810B006686D2 /* PAAlbumsTableViewController.swift */,
 				0129EDFA221980F9006686D2 /* PAAlbumTableViewCell.swift */,
+				0129EE2E2219FE9F006686D2 /* Album Details */,
 			);
 			path = Albums;
 			sourceTree = "<group>";
@@ -325,6 +332,16 @@
 				0129EE312219FF11006686D2 /* PACurrentAlbumTableViewCell.swift */,
 			);
 			path = "Album Details";
+			sourceTree = "<group>";
+		};
+		0129EE33221AC349006686D2 /* Image Service */ = {
+			isa = PBXGroup;
+			children = (
+				0129EE34221AC35C006686D2 /* ImageLoadingService.swift */,
+				0129EE36221AC423006686D2 /* MockImageLoadingService.swift */,
+				0129EE3A221AC8D0006686D2 /* PANukeImageLoadingService.swift */,
+			);
+			path = "Image Service";
 			sourceTree = "<group>";
 		};
 		454E1F444BA6DD2E90244E5B /* Pods */ = {
@@ -584,6 +601,7 @@
 			files = (
 				0129EDBA22196F41006686D2 /* PAAppDelegate.swift in Sources */,
 				0129EE2A2219F7D7006686D2 /* PACommentsTableViewController.swift in Sources */,
+				0129EE35221AC35C006686D2 /* ImageLoadingService.swift in Sources */,
 				0129EDF022197BD9006686D2 /* PAPostsTableViewController.swift in Sources */,
 				0129EDF222197C57006686D2 /* PAPostTableViewCell.swift in Sources */,
 				0129EE042219AFF9006686D2 /* Photo.swift in Sources */,
@@ -596,7 +614,9 @@
 				0129EE022219AF83006686D2 /* Comment.swift in Sources */,
 				0129EDF422197D9D006686D2 /* Post.swift in Sources */,
 				0129EE072219B20B006686D2 /* Dependency.swift in Sources */,
+				0129EE37221AC423006686D2 /* MockImageLoadingService.swift in Sources */,
 				0129EE0E2219B415006686D2 /* PostService.swift in Sources */,
+				0129EE3B221AC8D0006686D2 /* PANukeImageLoadingService.swift in Sources */,
 				0129EE2D2219F8AF006686D2 /* PACommentTableViewCell.swift in Sources */,
 				0129EE282219F2D0006686D2 /* PAAlbumService.swift in Sources */,
 				0129EDF622197DA7006686D2 /* Album.swift in Sources */,

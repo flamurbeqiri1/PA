@@ -13,6 +13,7 @@ protocol Dependency {
     func backendService() -> BackendService
     func postService() -> PostService
     func albumService() -> AlbumService
+    func imageLoadingService() -> ImageLoadingService
 }
 
 class CoreDependency: Dependency {
@@ -29,6 +30,10 @@ class CoreDependency: Dependency {
         return MockAlbumService()
     }
     
+    func imageLoadingService() -> ImageLoadingService {
+        return MockImageLoadingService()
+    }
+
 }
 
 /// The singleton dependency container reference
