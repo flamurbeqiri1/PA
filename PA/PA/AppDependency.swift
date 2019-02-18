@@ -23,7 +23,8 @@ class AppDependency: CoreDependency {
     // MARK: Album
     
     override func albumService() -> AlbumService {
-        return PAAlbumService(backendService: backendService())
+        return PAAlbumService(backendService: backendService(),
+                              imageLoadingService: imageLoadingService())
     }
     
     // MARK: Image Loading
