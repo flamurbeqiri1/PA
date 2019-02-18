@@ -1,6 +1,6 @@
 # PA
 
-    Simple DI application using a public API
+    Simple REST app with Dependency Injection Design Pattern using a public API
 
 A simple application that communicates with a Rest API which is https://jsonplaceholder.typicode.com.
 The application must have two main functionalities, handling posts and albums.
