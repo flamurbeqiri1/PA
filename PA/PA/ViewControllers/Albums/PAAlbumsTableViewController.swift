@@ -32,15 +32,14 @@ class PAAlbumsTableViewController: UITableViewController, HasDependencies {
         }
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let destination = segue.destination as? PACurrentAlbumTableViewController, let albumsSent = sender as? [Album] {
+            destination.currentAlbum = albumsSent
+        }
     }
-    */
 
 }
 
@@ -67,7 +66,14 @@ extension PAAlbumsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //TEMP
-        self.performSegue(withIdentifier: "showAlbumDetails", sender: nil)
+        let currentAlbum = self.albums[indexPath.row]
+        self.albumService.getPhotos(from: currentAlbum.id) { (result) in
+            switch result {
+            case .success(let albums):
+                self.performSegue(withIdentifier: "showAlbumDetails", sender: albums)
+            case .failure(let error):
+                print("Getting photos from album failed with error: \(error)")
+            }
+        }
     }
 }

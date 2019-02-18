@@ -60,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="697" y="-487"/>
         </scene>
-        <!--Current Album Table View Controller-->
+        <!--Album Photos-->
         <scene sceneID="hMY-Mc-yaD">
             <objects>
                 <tableViewController id="6ST-8g-w19" customClass="PACurrentAlbumTableViewController" customModule="PA" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,6 +103,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="albumThumbnailImage" destination="gSu-7w-YbW" id="SfH-2N-NJB"/>
                                     <outlet property="albumTitleLabel" destination="glY-jR-LwK" id="xp6-68-wPZ"/>
                                 </connections>
                             </tableViewCell>
@@ -112,6 +113,14 @@
                             <outlet property="delegate" destination="6ST-8g-w19" id="RX0-gk-dwC"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Album Photos" id="G1X-3J-ExF">
+                        <barButtonItem key="leftBarButtonItem" image="ico_Back" id="PTV-aC-E5h">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="backButtonPressed:" destination="6ST-8g-w19" id="sim-aX-13m"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y6Z-AV-6va" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,6 +128,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ico_Back" width="24" height="24"/>
         <image name="ico_albums" width="24" height="24"/>
     </resources>
 </document>

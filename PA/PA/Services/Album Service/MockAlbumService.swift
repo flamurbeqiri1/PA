@@ -29,6 +29,14 @@ class MockAlbumService: AlbumService {
         }
     }
     
+    func getPhotos(from albumId: Int, completion: @escaping (Result<[Album]>) -> Void) {
+        // Simulate network latency
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            print("MockAlbumService.getPhotos")
+            completion(Result.failure(AlbumServiceError.objectNotFound))
+        }
+    }
+    
     func getImage(from url: String, completion: @escaping (Result<UIImage>) -> Void) {
         // Simulate network latency
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {

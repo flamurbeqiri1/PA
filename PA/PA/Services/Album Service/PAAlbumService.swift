@@ -41,6 +41,17 @@ class PAAlbumService: AlbumService {
         }
     }
     
+    func getPhotos(from albumId: Int, completion: @escaping (Result<[Album]>) -> Void) {
+        self.backendService.get([Album].self, path: getAlbumPhotosUrl(from: albumId)) { (result) in
+            switch result {
+            case .success(let albums):
+                completion(Result.success(albums))
+            case .failure(let error):
+                completion(Result.failure(error))
+            }
+        }
+    }
+    
     func getImage(from url: String, completion: @escaping (Result<UIImage>) -> Void) {
         guard let url = URL(string: url) else {
             completion(Result.failure(AlbumServiceError.objectNotFound))
@@ -72,4 +83,13 @@ class PAAlbumService: AlbumService {
         })
     }
     
+}
+
+// MARK: - Helpers
+
+extension PAAlbumService {
+    
+    func getAlbumPhotosUrl(from albumId: Int) -> String {
+        return "\(baseUrl)albums/\(albumId)/photos"
+    }
 }

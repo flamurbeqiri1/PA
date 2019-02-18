@@ -10,6 +10,7 @@ import UIKit
 
 protocol AlbumService {
     func listAllAlbums(completion: @escaping (Result<[Album]>) -> Void)
+    func getPhotos(from albumId: Int, completion: @escaping (Result<[Album]>) -> Void)
     func getImage(from url: String, completion: @escaping (Result<UIImage>) -> Void)
     func loadImage(from url: String, into imageView: UIImageView, completion: @escaping (Result<Void>) -> Void)
 }

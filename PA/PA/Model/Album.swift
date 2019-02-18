@@ -9,7 +9,7 @@
 import Foundation
 
 struct Album: Codable {
-    let userId: Int
+    let userId: Int?
     let albumId: Int?
     let id: Int
     let title: String

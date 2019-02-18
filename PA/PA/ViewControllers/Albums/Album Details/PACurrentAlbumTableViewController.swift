@@ -27,7 +27,11 @@ class PACurrentAlbumTableViewController: UITableViewController, HasDependencies 
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 // MARK: - Table view data source
