@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tX8-wA-c8B">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Loader View Controller-->
+        <scene sceneID="zaS-AF-YRA">
+            <objects>
+                <viewController id="tX8-wA-c8B" customClass="LoaderViewController" customModule="Ads_on_Wheels" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l4a-jQ-BIC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IpY-Rz-I6E">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loader0" translatesAutoresizingMaskIntoConstraints="NO" id="Ubg-XV-z9f">
+                                <rect key="frame" x="157.5" y="303.5" width="60" height="60"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IpY-Rz-I6E" firstAttribute="leading" secondItem="l4a-jQ-BIC" secondAttribute="leading" id="FHm-Xt-koz"/>
+                            <constraint firstAttribute="trailing" secondItem="IpY-Rz-I6E" secondAttribute="trailing" id="R7m-dc-esk"/>
+                            <constraint firstItem="IpY-Rz-I6E" firstAttribute="top" secondItem="l4a-jQ-BIC" secondAttribute="top" id="bzQ-SA-dy8"/>
+                            <constraint firstAttribute="bottom" secondItem="IpY-Rz-I6E" secondAttribute="bottom" id="osw-dB-GxZ"/>
+                            <constraint firstItem="Ubg-XV-z9f" firstAttribute="centerY" secondItem="l4a-jQ-BIC" secondAttribute="centerY" id="ruX-lc-Qkb"/>
+                            <constraint firstItem="Ubg-XV-z9f" firstAttribute="centerX" secondItem="l4a-jQ-BIC" secondAttribute="centerX" id="wr0-kd-GRb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nQx-7v-fiC"/>
+                    </view>
+                    <connections>
+                        <outlet property="loaderImageView" destination="Ubg-XV-z9f" id="Zpc-hT-7lW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uZr-p7-P9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="68" y="130"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="loader0" width="60" height="60"/>
+    </resources>
+</document>

@@ -14,6 +14,7 @@ protocol Dependency {
     func postService() -> PostService
     func albumService() -> AlbumService
     func imageLoadingService() -> ImageLoadingService
+    func loaderService() -> LoaderService
 }
 
 class CoreDependency: Dependency {
@@ -32,6 +33,10 @@ class CoreDependency: Dependency {
     
     func imageLoadingService() -> ImageLoadingService {
         return MockImageLoadingService()
+    }
+    
+    func loaderService() -> LoaderService {
+        return MockLoaderService()
     }
 
 }

@@ -45,6 +45,11 @@
 		0129EE37221AC423006686D2 /* MockImageLoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE36221AC423006686D2 /* MockImageLoadingService.swift */; };
 		0129EE3B221AC8D0006686D2 /* PANukeImageLoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE3A221AC8D0006686D2 /* PANukeImageLoadingService.swift */; };
 		0129EE3E221AE01C006686D2 /* PASingleImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE3D221AE01C006686D2 /* PASingleImageViewController.swift */; };
+		0129EE41221AE6E7006686D2 /* LoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE40221AE6E7006686D2 /* LoaderService.swift */; };
+		0129EE43221AE6EF006686D2 /* MockLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE42221AE6EF006686D2 /* MockLoaderService.swift */; };
+		0129EE45221AE6F7006686D2 /* PALoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE44221AE6F7006686D2 /* PALoaderService.swift */; };
+		0129EE47221B109A006686D2 /* StoryboardIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE46221B109A006686D2 /* StoryboardIdentifier.swift */; };
+		0129EE49221B10D6006686D2 /* Loader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0129EE48221B10D6006686D2 /* Loader.storyboard */; };
 		363FE00F342FBD338D0A9BD8 /* Pods_PATests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C76585CA8514600407B59A /* Pods_PATests.framework */; };
 		673748D60B482C2A2D67EDE5 /* Pods_PAUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140E7A85C906D9E0B8591910 /* Pods_PAUITests.framework */; };
 		ACE655526FF56A8A251FB0D8 /* Pods_PA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C0F9E9DFE0715C3D5BD84E /* Pods_PA.framework */; };
@@ -112,6 +117,11 @@
 		0129EE36221AC423006686D2 /* MockImageLoadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageLoadingService.swift; sourceTree = "<group>"; };
 		0129EE3A221AC8D0006686D2 /* PANukeImageLoadingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PANukeImageLoadingService.swift; sourceTree = "<group>"; };
 		0129EE3D221AE01C006686D2 /* PASingleImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PASingleImageViewController.swift; sourceTree = "<group>"; };
+		0129EE40221AE6E7006686D2 /* LoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderService.swift; sourceTree = "<group>"; };
+		0129EE42221AE6EF006686D2 /* MockLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoaderService.swift; sourceTree = "<group>"; };
+		0129EE44221AE6F7006686D2 /* PALoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PALoaderService.swift; sourceTree = "<group>"; };
+		0129EE46221B109A006686D2 /* StoryboardIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifier.swift; sourceTree = "<group>"; };
+		0129EE48221B10D6006686D2 /* Loader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loader.storyboard; sourceTree = "<group>"; };
 		140E7A85C906D9E0B8591910 /* Pods_PAUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PAUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C76585CA8514600407B59A /* Pods_PATests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PATests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF6372ED44799B28EF11073 /* Pods-PATests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PATests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PATests/Pods-PATests.release.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +258,7 @@
 				0129EE0C2219B3E1006686D2 /* Album Service */,
 				0129EE33221AC349006686D2 /* Image Service */,
 				0129EE152219C54C006686D2 /* Backend */,
+				0129EE3F221AE6CE006686D2 /* Loader */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -285,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				0129EE092219B377006686D2 /* Result.swift */,
+				0129EE46221B109A006686D2 /* StoryboardIdentifier.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -353,6 +365,17 @@
 				0129EE3D221AE01C006686D2 /* PASingleImageViewController.swift */,
 			);
 			path = "Single Image";
+			sourceTree = "<group>";
+		};
+		0129EE3F221AE6CE006686D2 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				0129EE40221AE6E7006686D2 /* LoaderService.swift */,
+				0129EE42221AE6EF006686D2 /* MockLoaderService.swift */,
+				0129EE44221AE6F7006686D2 /* PALoaderService.swift */,
+				0129EE48221B10D6006686D2 /* Loader.storyboard */,
+			);
+			path = Loader;
 			sourceTree = "<group>";
 		};
 		454E1F444BA6DD2E90244E5B /* Pods */ = {
@@ -490,6 +513,7 @@
 				0129EDC422196F42006686D2 /* LaunchScreen.storyboard in Resources */,
 				0129EDF922197DD7006686D2 /* Posts.storyboard in Resources */,
 				0129EE002219825F006686D2 /* Albums.storyboard in Resources */,
+				0129EE49221B10D6006686D2 /* Loader.storyboard in Resources */,
 				0129EDC122196F42006686D2 /* Assets.xcassets in Resources */,
 				0129EDE822197264006686D2 /* README.md in Resources */,
 				0129EDBF22196F41006686D2 /* Main.storyboard in Resources */,
@@ -588,6 +612,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PA/Pods-PA-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AHKNavigationController/AHKNavigationController.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
 			);
@@ -595,6 +620,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AHKNavigationController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
 			);
@@ -614,15 +640,18 @@
 				0129EE2A2219F7D7006686D2 /* PACommentsTableViewController.swift in Sources */,
 				0129EE35221AC35C006686D2 /* ImageLoadingService.swift in Sources */,
 				0129EE3E221AE01C006686D2 /* PASingleImageViewController.swift in Sources */,
+				0129EE43221AE6EF006686D2 /* MockLoaderService.swift in Sources */,
 				0129EDF022197BD9006686D2 /* PAPostsTableViewController.swift in Sources */,
 				0129EDF222197C57006686D2 /* PAPostTableViewCell.swift in Sources */,
 				0129EE042219AFF9006686D2 /* Photo.swift in Sources */,
+				0129EE41221AE6E7006686D2 /* LoaderService.swift in Sources */,
 				0129EE172219C55C006686D2 /* BackendService.swift in Sources */,
 				0129EE1F2219D593006686D2 /* AppDependency.swift in Sources */,
 				0129EE122219BAFE006686D2 /* PAPostService.swift in Sources */,
 				0129EE192219C5D4006686D2 /* MockBackendService.swift in Sources */,
 				0129EE262219F008006686D2 /* MockAlbumService.swift in Sources */,
 				0129EE322219FF11006686D2 /* PACurrentAlbumTableViewCell.swift in Sources */,
+				0129EE47221B109A006686D2 /* StoryboardIdentifier.swift in Sources */,
 				0129EE022219AF83006686D2 /* Comment.swift in Sources */,
 				0129EDF422197D9D006686D2 /* Post.swift in Sources */,
 				0129EE072219B20B006686D2 /* Dependency.swift in Sources */,
@@ -638,6 +667,7 @@
 				0129EE242219EF25006686D2 /* AlbumService.swift in Sources */,
 				0129EDFD2219810B006686D2 /* PAAlbumsTableViewController.swift in Sources */,
 				0129EE0A2219B377006686D2 /* Result.swift in Sources */,
+				0129EE45221AE6F7006686D2 /* PALoaderService.swift in Sources */,
 				0129EE302219FEF4006686D2 /* PACurrentAlbumTableViewController.swift in Sources */,
 				0129EE1D2219D15A006686D2 /* Constants.swift in Sources */,
 			);

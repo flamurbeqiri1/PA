@@ -31,4 +31,9 @@ class AppDependency: CoreDependency {
     override func imageLoadingService() -> ImageLoadingService {
         return PANukeImageLoadingService()
     }
+    
+    // MARK: Loader
+    override func loaderService() -> LoaderService {
+        return PALoaderService()
+    }
 }
