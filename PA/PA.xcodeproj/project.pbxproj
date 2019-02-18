@@ -44,6 +44,7 @@
 		0129EE35221AC35C006686D2 /* ImageLoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE34221AC35C006686D2 /* ImageLoadingService.swift */; };
 		0129EE37221AC423006686D2 /* MockImageLoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE36221AC423006686D2 /* MockImageLoadingService.swift */; };
 		0129EE3B221AC8D0006686D2 /* PANukeImageLoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE3A221AC8D0006686D2 /* PANukeImageLoadingService.swift */; };
+		0129EE3E221AE01C006686D2 /* PASingleImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE3D221AE01C006686D2 /* PASingleImageViewController.swift */; };
 		363FE00F342FBD338D0A9BD8 /* Pods_PATests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C76585CA8514600407B59A /* Pods_PATests.framework */; };
 		673748D60B482C2A2D67EDE5 /* Pods_PAUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140E7A85C906D9E0B8591910 /* Pods_PAUITests.framework */; };
 		ACE655526FF56A8A251FB0D8 /* Pods_PA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C0F9E9DFE0715C3D5BD84E /* Pods_PA.framework */; };
@@ -110,6 +111,7 @@
 		0129EE34221AC35C006686D2 /* ImageLoadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingService.swift; sourceTree = "<group>"; };
 		0129EE36221AC423006686D2 /* MockImageLoadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageLoadingService.swift; sourceTree = "<group>"; };
 		0129EE3A221AC8D0006686D2 /* PANukeImageLoadingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PANukeImageLoadingService.swift; sourceTree = "<group>"; };
+		0129EE3D221AE01C006686D2 /* PASingleImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PASingleImageViewController.swift; sourceTree = "<group>"; };
 		140E7A85C906D9E0B8591910 /* Pods_PAUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PAUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C76585CA8514600407B59A /* Pods_PATests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PATests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF6372ED44799B28EF11073 /* Pods-PATests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PATests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PATests/Pods-PATests.release.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				0129EDFC2219810B006686D2 /* PAAlbumsTableViewController.swift */,
 				0129EDFA221980F9006686D2 /* PAAlbumTableViewCell.swift */,
 				0129EE2E2219FE9F006686D2 /* Album Details */,
+				0129EE3C221AE001006686D2 /* Single Image */,
 			);
 			path = Albums;
 			sourceTree = "<group>";
@@ -342,6 +345,14 @@
 				0129EE3A221AC8D0006686D2 /* PANukeImageLoadingService.swift */,
 			);
 			path = "Image Service";
+			sourceTree = "<group>";
+		};
+		0129EE3C221AE001006686D2 /* Single Image */ = {
+			isa = PBXGroup;
+			children = (
+				0129EE3D221AE01C006686D2 /* PASingleImageViewController.swift */,
+			);
+			path = "Single Image";
 			sourceTree = "<group>";
 		};
 		454E1F444BA6DD2E90244E5B /* Pods */ = {
@@ -602,6 +613,7 @@
 				0129EDBA22196F41006686D2 /* PAAppDelegate.swift in Sources */,
 				0129EE2A2219F7D7006686D2 /* PACommentsTableViewController.swift in Sources */,
 				0129EE35221AC35C006686D2 /* ImageLoadingService.swift in Sources */,
+				0129EE3E221AE01C006686D2 /* PASingleImageViewController.swift in Sources */,
 				0129EDF022197BD9006686D2 /* PAPostsTableViewController.swift in Sources */,
 				0129EDF222197C57006686D2 /* PAPostTableViewCell.swift in Sources */,
 				0129EE042219AFF9006686D2 /* Photo.swift in Sources */,

@@ -24,8 +24,9 @@ class PACurrentAlbumTableViewController: UITableViewController, HasDependencies 
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let destination = segue.destination as? PASingleImageViewController, let imageSent = sender as? UIImage {
+            destination.singleImage = imageSent
+        }
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -66,5 +67,22 @@ extension PACurrentAlbumTableViewController {
         }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentAlbum = self.currentAlbum[indexPath.row]
+        guard let albumImageUrl = currentAlbum.url else {
+            // TODO alert
+            print("Album url not fround from album: \(currentAlbum)")
+            return
+        }
+        self.albumService.getImage(from: albumImageUrl) { (result) in
+            switch result {
+            case .success(let image):
+                self.performSegue(withIdentifier: "showFullImage", sender: image)
+            case .failure(let error):
+                print("Getting image error: \(error)")
+            }
+        }
     }
 }

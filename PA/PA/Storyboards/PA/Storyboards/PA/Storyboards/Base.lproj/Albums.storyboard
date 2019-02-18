@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -121,14 +122,61 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="HsT-dr-Ov3" kind="presentation" identifier="showFullImage" modalTransitionStyle="crossDissolve" id="Zsz-au-emW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y6Z-AV-6va" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1520.8" y="-487.10644677661173"/>
         </scene>
+        <!--Single Image View Controller-->
+        <scene sceneID="4Zi-xj-Je1">
+            <objects>
+                <viewController id="HsT-dr-Ov3" customClass="PASingleImageViewController" customModule="PA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fcg-VL-deQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tHk-MW-YVY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JL8-1b-dvP">
+                                <rect key="frame" x="16" y="30" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="Iw2-Uz-IuS"/>
+                                    <constraint firstAttribute="width" secondItem="JL8-1b-dvP" secondAttribute="height" multiplier="1:1" id="qJH-Ee-vkv"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="ico_close"/>
+                                <connections>
+                                    <action selector="closeButtonPressed:" destination="HsT-dr-Ov3" eventType="touchUpInside" id="uyL-fd-Bxh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="JL8-1b-dvP" firstAttribute="leading" secondItem="ll7-Fc-Efm" secondAttribute="leading" constant="16" id="1TV-5h-he7"/>
+                            <constraint firstItem="ll7-Fc-Efm" firstAttribute="bottom" secondItem="tHk-MW-YVY" secondAttribute="bottom" id="HID-3f-07y"/>
+                            <constraint firstItem="ll7-Fc-Efm" firstAttribute="trailing" secondItem="tHk-MW-YVY" secondAttribute="trailing" id="Iws-fb-eYo"/>
+                            <constraint firstItem="tHk-MW-YVY" firstAttribute="top" secondItem="fcg-VL-deQ" secondAttribute="top" id="JF9-Bx-d72"/>
+                            <constraint firstItem="tHk-MW-YVY" firstAttribute="leading" secondItem="ll7-Fc-Efm" secondAttribute="leading" id="fph-WP-Mqo"/>
+                            <constraint firstItem="JL8-1b-dvP" firstAttribute="top" secondItem="ll7-Fc-Efm" secondAttribute="top" constant="10" id="mGW-4R-Gti"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ll7-Fc-Efm"/>
+                    </view>
+                    <connections>
+                        <outlet property="singleImageView" destination="tHk-MW-YVY" id="WFQ-hh-jp7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cIY-01-8G3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2301" y="-488"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ico_Back" width="24" height="24"/>
         <image name="ico_albums" width="24" height="24"/>
+        <image name="ico_close" width="24" height="24"/>
     </resources>
 </document>
