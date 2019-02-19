@@ -22,7 +22,6 @@
 		0129EDFD2219810B006686D2 /* PAAlbumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EDFC2219810B006686D2 /* PAAlbumsTableViewController.swift */; };
 		0129EE002219825F006686D2 /* Albums.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0129EDFE2219825F006686D2 /* Albums.storyboard */; };
 		0129EE022219AF83006686D2 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE012219AF83006686D2 /* Comment.swift */; };
-		0129EE042219AFF9006686D2 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE032219AFF9006686D2 /* Photo.swift */; };
 		0129EE072219B20B006686D2 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE062219B20B006686D2 /* Dependency.swift */; };
 		0129EE0A2219B377006686D2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE092219B377006686D2 /* Result.swift */; };
 		0129EE0E2219B415006686D2 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129EE0D2219B415006686D2 /* PostService.swift */; };
@@ -94,7 +93,6 @@
 		0129EDFC2219810B006686D2 /* PAAlbumsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAAlbumsTableViewController.swift; sourceTree = "<group>"; };
 		0129EDFF2219825F006686D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PA/Storyboards/PA/Storyboards/Base.lproj/Albums.storyboard; sourceTree = "<group>"; };
 		0129EE012219AF83006686D2 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
-		0129EE032219AFF9006686D2 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		0129EE062219B20B006686D2 /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
 		0129EE092219B377006686D2 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		0129EE0D2219B415006686D2 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
@@ -245,7 +243,6 @@
 				0129EDF322197D9D006686D2 /* Post.swift */,
 				0129EDF522197DA7006686D2 /* Album.swift */,
 				0129EE012219AF83006686D2 /* Comment.swift */,
-				0129EE032219AFF9006686D2 /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -643,7 +640,6 @@
 				0129EE43221AE6EF006686D2 /* MockLoaderService.swift in Sources */,
 				0129EDF022197BD9006686D2 /* PAPostsTableViewController.swift in Sources */,
 				0129EDF222197C57006686D2 /* PAPostTableViewCell.swift in Sources */,
-				0129EE042219AFF9006686D2 /* Photo.swift in Sources */,
 				0129EE41221AE6E7006686D2 /* LoaderService.swift in Sources */,
 				0129EE172219C55C006686D2 /* BackendService.swift in Sources */,
 				0129EE1F2219D593006686D2 /* AppDependency.swift in Sources */,
