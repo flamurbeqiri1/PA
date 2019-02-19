@@ -23,7 +23,8 @@ class PAPostsTableViewController: UITableViewController, HasDependencies {
     
     func setupUI() {
         self.loaderService.showLoadingIndicator()
-        self.postService.listAllPosts { (result) in
+        self.postService.listAllPosts { [weak self] (result) in
+            guard let `self` = self else { return }
             self.loaderService.hideLoadingIndicator()
             switch result {
             case .failure(let error):
@@ -72,7 +73,8 @@ extension PAPostsTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentPost = self.posts[indexPath.row]
         self.loaderService.showLoadingIndicator()
-        self.postService.getComments(from: currentPost.id) { (result) in
+        self.postService.getComments(from: currentPost.id) { [weak self] (result) in
+            guard let `self` = self else { return }
             self.loaderService.hideLoadingIndicator()
             switch result {
             case .success(let comments):

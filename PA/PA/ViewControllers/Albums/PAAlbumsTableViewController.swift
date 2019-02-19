@@ -23,7 +23,8 @@ class PAAlbumsTableViewController: UITableViewController, HasDependencies {
 
     func setupUI() {
         self.loaderService.showLoadingIndicator()
-        self.albumService.listAllAlbums { (result) in
+        self.albumService.listAllAlbums { [weak self] (result) in
+            guard let `self` = self else { return }
             self.loaderService.hideLoadingIndicator()
             switch result {
             case .failure(let error):
@@ -71,7 +72,8 @@ extension PAAlbumsTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentAlbum = self.albums[indexPath.row]
         self.loaderService.showLoadingIndicator()
-        self.albumService.getPhotos(from: currentAlbum.id) { (result) in
+        self.albumService.getPhotos(from: currentAlbum.id) { [weak self] (result) in
+            guard let `self` = self else { return }
             self.loaderService.hideLoadingIndicator()
             switch result {
             case .success(let albums):
