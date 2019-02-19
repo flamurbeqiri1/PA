@@ -195,7 +195,7 @@
 				0129EDEA221972DE006686D2 /* ViewControllers */,
 				0129EDEB221972E6006686D2 /* Model */,
 				0129EDEC221972F3006686D2 /* Services */,
-				0129EE082219B35E006686D2 /* Helper */,
+				0129EE082219B35E006686D2 /* Helpers */,
 			);
 			path = PA;
 			sourceTree = "<group>";
@@ -289,13 +289,13 @@
 			path = "Dependency Injection";
 			sourceTree = "<group>";
 		};
-		0129EE082219B35E006686D2 /* Helper */ = {
+		0129EE082219B35E006686D2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				0129EE092219B377006686D2 /* Result.swift */,
 				0129EE46221B109A006686D2 /* StoryboardIdentifier.swift */,
 			);
-			path = Helper;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		0129EE0B2219B3D9006686D2 /* Post Service */ = {
