@@ -66,24 +66,22 @@ class PABackendService: BackendService {
         do {
             let dataEncoded = try JSONEncoder().encode(object)
             request.httpBody = dataEncoded
+            Alamofire.request(request).validate().responseJSON { (response) in
+                switch response.result {
+                case .success:
+                    completion(Result.success(object))
+                case .failure(let error):
+                    #if DEBUG
+                    print("DEBUG: Error on getting response: \(error)")
+                    #endif
+                    completion(Result.failure(error))
+                }
+            }
         } catch let error {
             #if DEBUG
             print("DEBUG: Could not encode data: \(error)")
             #endif
             completion(Result.failure(BackendServiceError.encodingError))
         }
-        Alamofire.request(request).validate().responseJSON { (response) in
-            switch response.result {
-            case .success:
-                completion(Result.success(object))
-            case .failure(let error):
-                #if DEBUG
-                print("DEBUG: Error on getting response: \(error)")
-                #endif
-                completion(Result.failure(error))
-            }
-        }
     }
-    
-    
 }
