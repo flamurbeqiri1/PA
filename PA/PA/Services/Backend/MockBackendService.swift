@@ -24,4 +24,12 @@ class MockBackendService: BackendService {
             completion(Result.failure(BackendServiceError.objectNotFound))
         }
     }
+    
+    func store<T>(_ object: T, path: String, completion: @escaping (Result<T>) -> Void) where T : Encodable {
+        // Simulate network latency
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            completion(Result.failure(BackendServiceError.objectNotFound))
+        }
+    }
+    
 }

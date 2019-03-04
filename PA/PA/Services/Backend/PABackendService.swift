@@ -55,5 +55,35 @@ class PABackendService: BackendService {
         }
     }
     
+    func store<T: Encodable>(_ object: T, path: String, completion: @escaping (Result<T>) -> Void)  {
+        guard let url = URL(string: path) else {
+            completion(Result.failure(BackendServiceError.urlNotConvertible))
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
+        do {
+            let dataEncoded = try JSONEncoder().encode(object)
+            request.httpBody = dataEncoded
+        } catch let error {
+            #if DEBUG
+            print("DEBUG: Could not encode data: \(error)")
+            #endif
+            completion(Result.failure(BackendServiceError.encodingError))
+        }
+        Alamofire.request(request).validate().responseJSON { (response) in
+            switch response.result {
+            case .success:
+                completion(Result.success(object))
+            case .failure(let error):
+                #if DEBUG
+                print("DEBUG: Error on getting response: \(error)")
+                #endif
+                completion(Result.failure(error))
+            }
+        }
+    }
+    
     
 }
