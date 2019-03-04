@@ -3,9 +3,9 @@
     Simple REST app with Dependency Injection Design Pattern using a public API
 
 A simple application that communicates with a Rest API which is https://jsonplaceholder.typicode.com.
-The application must have two main functionalities, handling posts and albums.
+The application has two main functionalities, handling posts and albums.
 
-Please find the functionalities as described below:
+Functionalities are described below:
 
 
 1). Posts
