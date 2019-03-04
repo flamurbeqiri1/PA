@@ -24,7 +24,9 @@ class PABackendService: BackendService {
     }
     
     func get<T>(_ type: T.Type, path: String, completion: @escaping (Result<T>) -> Void) where T : Decodable {
-        Alamofire.request(path, method: .get).validate().responseJSON { (response) in
+        Alamofire.request(path, method: .get)
+            .validate()
+            .responseJSON { (response) in
             switch response.result {
             case .success:
                 do {
